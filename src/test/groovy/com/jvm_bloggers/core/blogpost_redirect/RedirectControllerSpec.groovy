@@ -3,7 +3,7 @@ package com.jvm_bloggers.core.blogpost_redirect
 import akka.actor.ActorSystem
 import com.jvm_bloggers.entities.blog_post.BlogPost
 import com.jvm_bloggers.entities.blog_post.BlogPostRepository
-import com.jvm_bloggers.entities.click.ClickRepository
+
 import com.jvm_bloggers.utils.NowProvider
 import javaslang.control.Option
 import org.springframework.test.web.servlet.MockMvc
@@ -20,7 +20,7 @@ class RedirectControllerSpec extends Specification {
     private MockMvc mockMvc = standaloneSetup(
             new RedirectController(
                     blogPostRepositoryMock,
-                    Stub(ClickRepository),
+                    Stub(AsdRepository),
                     ActorSystem.create("test"),
                     Stub(NowProvider)))
             .build()
